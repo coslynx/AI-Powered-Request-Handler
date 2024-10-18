@@ -1,0 +1,59 @@
+[[tool.poetry.dependencies]]
+name = "fastapi"
+version = "0.115.2"
+[[tool.poetry.dependencies]]
+name = "uvicorn"
+version = "0.32.0"
+[[tool.poetry.dependencies]]
+name = "pydantic"
+version = "2.9.2"
+[[tool.poetry.dependencies]]
+name = "sqlalchemy"
+version = "2.0.36"
+[[tool.poetry.dependencies]]
+name = "psycopg2-binary"
+version = "2.9.10"
+[[tool.poetry.dependencies]]
+name = "PyJWT"
+version = "2.9.0"
+[[tool.poetry.dependencies]]
+name = "docker"
+version = "7.1.0"
+[[tool.poetry.dependencies]]
+name = "docker-compose"
+version = "1.29.2"
+[[tool.poetry.dependencies]]
+name = "pytest"
+version = "8.3.3"
+[[tool.poetry.dependencies]]
+name = "black"
+version = "24.10.0"
+[[tool.poetry.dependencies]]
+name = "flake8"
+version = "7.1.1"
+[[tool.poetry.dependencies]]
+name = "openai"
+version = "1.52.0"
+[[tool.poetry.dependencies]]
+name = "redis"
+version = "5.1.1"
+[[tool.poetry.dependencies]]
+name = "alembic"
+version = "1.13.3"
+[[tool.poetry.dependencies]]
+name = "celery"
+version = "5.4.0"
+
+[tool.poetry.dev-dependencies]
+name = "pytest-cov"
+version = "^4.1.0"
+
+[tool.poetry]
+name = "ai-request-handler"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <your_email@example.com>"]
+
+[build-system]
+requires = ["poetry-core>=1.0"]
+build-backend = "poetry.core.masonry.api"
