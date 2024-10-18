@@ -1,0 +1,52 @@
+{
+  "commands": [
+    {
+      "name": "test",
+      "description": "Run all unit tests for the application",
+      "command": "pytest"
+    },
+    {
+      "name": "format",
+      "description": "Format the code using Black",
+      "command": "black ."
+    },
+    {
+      "name": "lint",
+      "description": "Lint the code using flake8",
+      "command": "flake8 ."
+    },
+    {
+      "name": "build",
+      "description": "Build the Docker image",
+      "command": "docker build -t ai-request-handler:latest ."
+    },
+    {
+      "name": "run",
+      "description": "Run the application using Docker Compose",
+      "command": "docker-compose up -d"
+    },
+    {
+      "name": "deploy",
+      "description": "Deploy the application to a container registry (e.g., Docker Hub) and run Docker Compose",
+      "command": [
+        "docker push ai-request-handler:latest",
+        "docker-compose up -d"
+      ]
+    },
+    {
+      "name": "migrate",
+      "description": "Run database migrations using Alembic",
+      "command": "alembic upgrade head"
+    },
+    {
+      "name": "shell",
+      "description": "Open an interactive shell within the Docker container",
+      "command": "docker-compose exec app bash"
+    },
+    {
+      "name": "start-celery",
+      "description": "Start Celery worker for background tasks",
+      "command": "celery -A api.celery worker -l info"
+    }
+  ]
+}
