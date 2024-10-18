@@ -1,0 +1,50 @@
+stages:
+  - build
+  - test
+  - deploy
+
+build:
+  stage: build
+  image: docker:latest
+  script:
+    - docker build -t ai-request-handler:latest .
+
+test:
+  stage: test
+  image: python:3.9
+  script:
+    - pip install -r requirements.txt
+    - pytest
+
+deploy:
+  stage: deploy
+  image: docker:latest
+  script:
+    - docker push ai-request-handler:latest
+    - docker-compose up -d
+
+cache:
+  key: ${CI_PIPELINE_ID}
+  paths:
+    - vendor/bundle/
+    - node_modules/
+    - .bundle/
+
+trigger:
+  branches:
+    - main
+
+variables:
+  OPENAI_API_KEY: ${OPENAI_API_KEY}
+  DATABASE_URL: ${DATABASE_URL}
+  JWT_SECRET_KEY: ${JWT_SECRET_KEY}
+
+manual_deploy:
+  stage: deploy
+  image: docker:latest
+  script:
+    - docker push ai-request-handler:latest
+    - docker-compose up -d
+  when: manual
+  trigger:
+    - manual
