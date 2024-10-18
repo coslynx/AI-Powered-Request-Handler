@@ -1,0 +1,40 @@
+# Ignore all build artifacts
+build/
+dist/
+
+# Ignore virtual environment
+venv/
+
+# Ignore testing-related files
+.pytest_cache/
+.coverage/
+tests/
+
+# Ignore migrations
+migrations/
+
+# Ignore generated documentation
+docs/
+
+# Ignore example configurations
+.env.example
+
+# Ignore celery config and tasks
+celery/
+
+# Ignore unused files
+commands.json
+startup.sh
+
+# Ignore IDE and editor settings
+.vscode/
+.editorconfig
+
+# Ignore pre-commit configuration
+.pre-commit-config.yaml
+
+# Ignore generated lock files
+poetry.lock
+
+# Ignore gitlab CI configuration
+.gitlab-ci.yml
