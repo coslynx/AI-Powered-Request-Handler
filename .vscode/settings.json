@@ -1,0 +1,109 @@
+{
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.fixAll.style": true
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/coverage": true,
+    "**/.pytest_cache": true,
+    "**/migrations": true,
+    "**/docs": true,
+    "**/.env.example": true,
+    "**/commands.json": true,
+    "**/startup.sh": true,
+    "**/build": true
+  },
+  "python.pythonPath": "${workspaceFolder}/venv/bin/python",
+  "python.linting.flake8Enabled": true,
+  "python.linting.flake8Args": [
+    "--max-line-length=88"
+  ],
+  "python.formatting.provider": "black",
+  "python.formatting.blackArgs": [
+    "--line-length=88"
+  ],
+  "python.testing.unittestEnabled": false,
+  "python.testing.pytestEnabled": true,
+  "python.testing.pytestArgs": [
+    "--cov=api.src",
+    "--cov-report=html"
+  ],
+  "python.analysis.typeCheckingMode": "basic",
+  "python.analysis.autoImportSuggestions": true,
+  "python.analysis.extraPaths": [
+    "${workspaceFolder}/venv/lib/python3.9/site-packages"
+  ],
+  "terminal.integrated.env.linux": {
+    "PATH": "${env:PATH}:${workspaceFolder}/venv/bin"
+  },
+  "terminal.integrated.env.osx": {
+    "PATH": "${env:PATH}:${workspaceFolder}/venv/bin"
+  },
+  "terminal.integrated.env.windows": {
+    "PATH": "${env:PATH}:${workspaceFolder}/venv/Scripts"
+  },
+  "workbench.colorTheme": "Visual Studio Dark",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.fixAll.style": true
+  },
+  "extensions.ignoreRecommendations": true,
+  "terminal.integrated.shell.linux": "/bin/bash",
+  "terminal.integrated.shell.osx": "/bin/zsh",
+  "editor.tabSize": 2,
+  "editor.renderWhitespace": "boundary",
+  "editor.renderIndentGuides": true,
+  "editor.minimap.enabled": true,
+  "editor.minimap.renderCharacters": true,
+  "editor.renderLineHighlight": "all",
+  "editor.suggest.snippetsPreventQuickSuggestions": false,
+  "editor.suggest.showIcons": true,
+  "editor.suggest.showMethods": true,
+  "editor.suggest.showFunctions": true,
+  "editor.suggest.showClasses": true,
+  "editor.suggest.showVariables": true,
+  "editor.suggest.showConstructors": true,
+  "editor.suggest.showKeywords": true,
+  "editor.suggest.showSnippets": true,
+  "editor.suggest.showUserSnippets": true,
+  "editor.suggest.showImports": true,
+  "editor.suggest.showParameterHints": true,
+  "editor.suggest.showDocstringParameters": true,
+  "editor.suggest.insertMode": "insert",
+  "editor.suggest.filterGraceful": true,
+  "editor.suggest.quickSuggestionsDelay": 10,
+  "editor.suggest.snippetsSuggest": true,
+  "editor.suggest.insertSpaces": true,
+  "editor.snippetSuggestions": "bottom",
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": true,
+    "strings": true
+  },
+  "editor.selectionHighlight": true,
+  "editor.wordWrap": "on",
+  "editor.rulers": [
+    80
+  ],
+  "editor.renderIndentGuides": true,
+  "editor.renderWhitespace": "boundary",
+  "editor.fontSize": 14,
+  "editor.lineNumbers": "on",
+  "editor.fontFamily": "JetBrains Mono, Consolas, Monaco, 'Courier New', monospace",
+  "editor.fontWeight": "400",
+  "editor.fontLigatures": true,
+  "editor.scrollBeyondLastLine": false,
+  "editor.smoothScrolling": true,
+  "editor.scrollPredominantly": "mouse"
+}
