@@ -1,0 +1,47 @@
+name: Deploy to Production
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build Docker Image
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          push: true
+          tags: ai-request-handler:latest
+          # Optional: Add Docker Hub credentials if needed
+          # dockerhub/username: ${DOCKER_HUB_USERNAME}
+          # dockerhub/password: ${DOCKER_HUB_PASSWORD}
+      - name: Deploy to Kubernetes
+        uses: kubernetes/kubectl-action@v1
+        with:
+          # Specify your Kubernetes configuration (e.g., kubeconfig file)
+          # kubeconfig: ${{ secrets.KUBECONFIG }}
+          # If you're using a cluster from a different provider, use appropriate secrets. 
+          # For example, for AWS EKS, use:
+          # kubeconfig: ${{ secrets.AWS_EKS_KUBECONFIG }}
+          command: apply
+          # Specify the deployment YAML file
+          # This file should define your deployment in a way compatible with your Kubernetes cluster
+          # It should be named 'deployment.yaml' and placed in the root of your repository
+          # Update this if you use a different deployment file or folder:
+          path: deployment.yaml
+          # Add labels for versioning, environment, etc. as needed
+          # Example:
+          # labels: |
+          #   version: ${{ secrets.CI_COMMIT_TAG }}
+          #   environment: production 
+      - name: Wait for deployment
+        run: |
+          # Optional: Implement a wait command to verify successful deployment
+          # This might involve waiting for a specific pod status, or other verification steps
+          # Example:
+          # kubectl wait --for=condition=Available deployment/ai-request-handler 
+          echo "Deployment complete."
